@@ -1,5 +1,4 @@
-  @@ -0,0 +1,6 @@
-  spring:
+spring:
     datasource:
       url: jdbc:h2:mem:db_test;MODE=MySQL
       username: sa
