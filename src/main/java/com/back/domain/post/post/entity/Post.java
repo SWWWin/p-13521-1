@@ -1,4 +1,4 @@
-package com.back.domain.post.post.entitty;
+package com.back.domain.post.post.entity;
 
 import com.back.domain.global.jpa.entity.BaseEntity;
 import jakarta.persistence.Entity;
