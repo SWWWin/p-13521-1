@@ -9,7 +9,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -30,7 +29,7 @@ public class MemberController {
         return "member/member/register";
     }
 
-    @ToString
+
     @Getter
     @Setter
     public static class RegisterForm{
@@ -48,6 +47,18 @@ public class MemberController {
         @Email
         private String email;
 
+
+    }
+
+    @Getter
+    @Setter
+    public static class LoginForm{
+        @Size(min=3, max=25)
+        @NotBlank(message = "ID는 필수 항목입니다.")
+        private String username;
+
+        @NotBlank(message = "패스워드는 필수 항목입니다.")
+        private String password;
 
     }
 
@@ -80,8 +91,8 @@ public class MemberController {
 
         return "post/post/list";
     }
-//    @GetMapping("/login")
-//    public String showLogin() {
-//
-//    }
+    @GetMapping("/login")
+    public String showLogin(LoginForm loginForm) {
+        return "member/member/login";
+    }
 }

@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.implementation
+
 plugins {
     java
     id("org.springframework.boot") version "3.5.5"
@@ -38,6 +40,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation ("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0")
+
 }
 
 tasks.withType<Test> {
